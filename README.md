@@ -7,13 +7,20 @@ Preprocessing modules reused from following repo:
 https://github.com/MiuLab/SlotGated-SLU/
 
 
+## Results
 
-##Results
+**Atis Dataset:**
 
-###Atis Dataset:
-Milli seconds per query for batch of 893 queries: 1.894574023516392
-slot f1: 95.08138711960368	  intent accuracy: 94.62486002239642	    semantic_accuracy: 81.97088465845465
+Inference time per query for batch of 893 queries: 1.89 ms
 
-###Snips Dataset:
-Milli seconds per query for batch of 700 queries: 2.7127075114289516
-slot f1: 84.3046896177826     intent accuracy: 96.57142857142857	    semantic_accuracy: 66.42857142857143
+* Slot_f1: 95.08	  
+* Intent_accuracy: 94.62	    
+* Semantic_accuracy: 81.97
+
+**Snips Dataset:**
+
+Inference time per query for batch of 700 queries: 2.71 ms
+
+* Slot_f1: 84.30     
+* Intent_accuracy: 96.57	    
+* Semantic_accuracy: 66.43
