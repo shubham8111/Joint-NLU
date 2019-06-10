@@ -1,6 +1,6 @@
 import numpy as np
 
-def createVocabulary(input_path, output_path, flag="inp"):
+def createVocabulary(input_path, output_path, no_pad=False):
     if not isinstance(input_path, str):
         raise TypeError('input_path should be string')
 
@@ -23,12 +23,11 @@ def createVocabulary(input_path, output_path, flag="inp"):
                     vocab[w] += 1
                 else:
                     vocab[w] = 1
-        if flag == 'inp':
-            vocab = ['_UNK','_PAD'] + sorted(vocab, key=vocab.get, reverse=True)
-        elif flag=='slot' :
-            vocab = ['_PAD'] + sorted(vocab, key=vocab.get, reverse=True)
-        else:    
+        if no_pad == False:
+            vocab = ['_PAD', '_UNK'] + sorted(vocab, key=vocab.get, reverse=True)
+        else:
             vocab = sorted(vocab, key=vocab.get, reverse=True)
+            print(vocab)
 
         for v in vocab:
             out.write(v+'\n')
@@ -62,10 +61,7 @@ def sentenceToIds(data, vocab):
     for w in words:
         if str.isdigit(w) == True:
             w = '0'
-        if w in vocab:
-            ids.append(vocab[w])
-        else:
-            ids.append(vocab['_UNK'])
+        ids.append(vocab.get(w, vocab['_UNK']))
 
     return ids
 
