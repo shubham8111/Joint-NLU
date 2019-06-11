@@ -27,4 +27,4 @@ https://github.com/MiuLab/SlotGated-SLU/
 | Baseline   | 95.08   | 94.62           | 81.97             |
 | Slot Gated | 94.57   | 96.41           | 83.65             |
 
-P.S Sometimes Slot F1 might get stuck at zero during training, better weight intialization or training a few epochs only on slot loss can resolve the issue. 
+P.S.  Sometimes Slot F1 might get stuck at zero during training, better weight intialization or training a few epochs only on slot loss can resolve the issue. 
